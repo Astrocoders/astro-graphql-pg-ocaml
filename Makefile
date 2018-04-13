@@ -12,5 +12,6 @@ deps:
 	opam install merlin.3.0.5
 	opam install ocp-indent.1.6.1
 	opam install graphql-lwt.0.3.0
+	opam pin add ezpostgresql https://github.com/bobbypriambodo/ezpostgresql.git
 
 .PHONY: clean all
