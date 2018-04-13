@@ -1,8 +1,10 @@
 (jbuild_version 1)
 
-(executable
- ((name main)
-   (libraries (cohttp.lwt graphql-lwt yojson lib))))
+(executable (
+  (name main)
+  (libraries (cohttp.lwt graphql-lwt yojson lib))
+  (preprocess (pps (lwt.ppx)))
+))
 
 (alias
   ((name DEFAULT)

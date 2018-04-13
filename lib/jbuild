@@ -1,5 +1,7 @@
 (jbuild_version 1)
 
-(library
-  ((name lib)
-    (libraries (cohttp.lwt graphql-lwt yojson))))
+(library (
+  (name lib)
+  (libraries (cohttp.lwt graphql-lwt yojson ezpostgresql))
+  (preprocess (pps (lwt.ppx)))
+))
