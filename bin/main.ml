@@ -13,18 +13,6 @@ let schema = Schema.(schema [
       | None -> Lwt.return []
     )
   ;
-  field "greeter"
-    ~typ:string
-    ~args:Arg.[
-      arg "config" ~typ:(non_null (obj "Greeter_config" ~coerce:(fun greeting name -> (greeting, name)) ~fields:[
-        arg' "greeting" ~typ:string ~default:"hello";
-        arg "name" ~typ:(non_null string)
-      ]))
-    ]
-    ~resolve:(fun () () (greeting, name) ->
-      Some (Format.sprintf "%s, %s" greeting name)
-    )
-  ;
 ]
 )
 
