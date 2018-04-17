@@ -8,7 +8,7 @@ let schema = Schema.(schema [
     ~args:Arg.[]
     ~typ:(non_null (list (non_null UserType.user)))
     ~resolve:(fun () () ->
-      match%lwt UserModel.findOne() with
+      match%lwt (Models.User.findOne ()) with
       | Some user -> Lwt.return [user]
       | None -> Lwt.return []
     )

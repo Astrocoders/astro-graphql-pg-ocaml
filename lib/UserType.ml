@@ -1,13 +1,5 @@
 open Graphql_lwt
-
-type role = User | Admin
-
-type user = {
-  id   : string;
-  name : string option;
-  role : role;
-  gender: UserGenderType.gender;
-}
+open UserModel.Config
 
 let role = Schema.(enum "Role"
                      ~values:[
